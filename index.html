@@ -3,9 +3,13 @@
 <head>
 	<title>tensorflow.js</title>
 	<meta charset="utf-8">
-	<!-- 使用说明 https://cdnjs.loli.net/ajax/libs/tensorflow/2.3.0/tf.min.js.html -->
-	<script type="text/javascript" src="./tf.2.3.0.min.js"></script>
-	<script type="text/javascript" src="./tfjs-vis.umd.min.js"></script>
+		
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/syjsu/Cars_Data_with_Tensorflow.js/tf.2.3.0.min.js"></script>
+	<!-- <script type="text/javascript" src="./tf.2.3.0.min.js"></script> -->
+	
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/syjsu/Cars_Data_with_Tensorflow.js/tfjs-vis.umd.min.js"></script>
+	<!-- <script type="text/javascript" src="./tfjs-vis.umd.min.js"></script> -->
+
 </head>
 <body>
 	<h1>Tensorflow 预测数据集</h1>
@@ -46,7 +50,8 @@
 	
 	// 获取数据，只保留感兴趣的字段，并进行数据清洗
 	async function getData() {
-	  const carsDataReq = await fetch('./carsData.json');  
+	  //const carsDataReq = await fetch('./carsData.json'); 
+	  const carsDataReq = await fetch('https://cdn.jsdelivr.net/gh/syjsu/Cars_Data_with_Tensorflow.js/carsData.json');  
 	  const carsData = await carsDataReq.json();  
 	  const cleaned = carsData.map(car => ({
 	    mpg: car.Miles_per_Gallon,
